@@ -30,25 +30,36 @@ Milestone 4 (BONUS)
 
 <?php
 
-$inputPassw = $_GET['password'];
 
-var_dump($inputPassw);
+
+var_dump($_GET['password']);
 
 function randomPassword() {
     $inputPassw = $_GET['password'];
+    
     $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!£$%&/^-.;,_<>\|';
-    $pass = array(); //remember to declare $pass as an array
-    $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+
+    $alphaLength = strlen($alphabet);
+
+    $passw = '';
+
     for ($i = 0; $i < strlen($inputPassw); $i++) {
-        $n = rand(0, $alphaLength);
-        $pass[] = $alphabet[$n];
+       $randomIndex = random_int(0, $alphaLength - 1);
+
+       $passw .= $alphabet[$randomIndex];
     }
-    return implode($pass); //turn the array into a string
+
+    return $passw; 
 };
 
-//randomPassword();
-var_dump(randomPassword($inputPassw));
-
+var_dump(randomPassword());
+$randomPassw = randomPassword();
+/* 
+if ($inputPassw) {
+    echo 'Is set!';
+}else{
+    echo 'nope';
+}; */
 
 ?>
 
@@ -68,6 +79,10 @@ var_dump(randomPassword($inputPassw));
     <div class="container mt-5 mx-5">
         <div class="row mt-5">
             <div class="col mt-5">
+                <div class="card">
+                    <h3><?php echo $randomPassw ?></h3>
+                </div>
+
                 <div class="card mt-5 p-5">
 
                     <form action="./index.php" method="GET">
