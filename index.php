@@ -30,8 +30,9 @@ Milestone 4 (BONUS)
 
 <?php
 
+$inputPassw = $_GET['password'];
 
-
+var_dump($inputPassw);
 
 
 ?>
@@ -47,20 +48,21 @@ Milestone 4 (BONUS)
 </head>
 
 
-<body class="bg-dark">
+<body>
 
     <div class="container mt-5 mx-5">
         <div class="row mt-5">
             <div class="col mt-5">
                 <div class="card mt-5 p-5">
 
-                    <form action="/index.php" method="GET">
+                    <form action="./index.php" method="GET">
 
                         <!-- Input text inserisci password -->
                         <!-- Qui la password viene inserita dall'utente -->
                         <div class="mb-3 d-flex justify-content-between">
-                            <label for="exampleInputText1" class="form-label">Lunghezza password</label>
-                            <input type="text" class="form-control w-25" id="exampleInputText1" aria-describedby="textHelp">
+                            <label for="password" class="form-label">Lunghezza password</label>
+
+                            <input type="text" class="form-control w-25" name="password" id="password">
                             <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                         </div>
 
