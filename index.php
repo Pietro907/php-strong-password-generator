@@ -35,6 +35,7 @@ Milestone 4 (BONUS)
 var_dump($_GET['password']);
 
 function randomPassword() {
+
     $inputPassw = $_GET['password'];
     
     $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!£$%&/^-.;,_<>\|';
@@ -44,7 +45,7 @@ function randomPassword() {
     $passw = '';
 
     for ($i = 0; $i < strlen($inputPassw); $i++) {
-       $randomIndex = random_int(0, $alphaLength - 1);
+       $randomIndex = random_int(0, $alphaLength);
 
        $passw .= $alphabet[$randomIndex];
     }
@@ -53,13 +54,7 @@ function randomPassword() {
 };
 
 var_dump(randomPassword());
-$randomPassw = randomPassword();
-/* 
-if ($inputPassw) {
-    echo 'Is set!';
-}else{
-    echo 'nope';
-}; */
+
 
 ?>
 
@@ -80,7 +75,7 @@ if ($inputPassw) {
         <div class="row mt-5">
             <div class="col mt-5">
                 <div class="card">
-                    <h3><?php echo $randomPassw ?></h3>
+                    <h3><?php echo randomPassword() ?></h3>
                 </div>
 
                 <div class="card mt-5 p-5">
