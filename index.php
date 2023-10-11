@@ -52,7 +52,7 @@ include __DIR__ . './layout/function.php';
         <div class="row mt-5">
             <div class="col mt-5">
                 <div class="card">
-                    <h3><?php echo randomPassword() ?></h3>
+                    <h5><?php echo randomPassword() ?></h5>
                 </div>
 
                 <div class="card mt-5 p-5">
